@@ -92,3 +92,33 @@ NAME                                            KOR        ENG        MAT
 홍길동                                          100        100        100
 박해영                                          100        100        100
 
+10. jumsu 테이블과 jumsu2 테이블을 merge 합니다. 
+   단 jumsu테이블과 jumsu2테이블의 이름을 비교해서 
+   jumsu 테이블에 jumsu2와 같은 이름이 있는 경우에는 점수들을 수정하고
+   없는 경우는 삽입합니다.
+
+   SQL> select * from jumsu;
+
+NAME                                            KOR        ENG        MAT
+---------------------------------------- ---------- ---------- ----------
+박해영                                          100        100        100
+김혜수                                           75         96         80
+똘똘이                                           95         90         85
+홍길동                                          100        100        100
+
+
+
+=======================================================================================
+자식테이블 외래키          부모테이블 부모키
+---------- --------------- ---------- ----------
+CHILD3     C_ID            PARENT3    P_ID
+CHILD2     C_ID            PARENT2    P_ID
+CHILD      C_ID            PARENT     P_ID
+EMP03      DEPTNO          DEPT       DEPTNO
+EMP02      DEPTNO          DEPT       DEPTNO
+EMP06      DEPTNO          DEPT       DEPTNO
+EMP        DEPTNO          DEPT       DEPTNO
+
+7 rows selected.
+
+USER_CONSTRAINTS와 USER_CONS_COLUMNS를 이용해서 구해 봅시다.
