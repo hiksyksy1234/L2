@@ -1,21 +1,72 @@
-1. 아래와 같이 출력되도록 달력을 만들어 봅시다.
+public static void main(String args[]) {
 
-출력할 년도를 입력하세요>2022
-출력할 달을 입력하세요>6
-			2022년  6월
-일     월	    화 	   수 	  목	  금	  토	
-===================================================
-		       1      2	       3        4	
+		Student[] students = { 
+				   new Student("강호동", 85, 60, 70),
+	               new Student("이승기", 90, 95, 80), 
+	               new Student("유재석", 75, 80, 100), 
+	               new Student("하하", 80, 70, 95), 
+	               new Student("이광수", 100, 65, 80) };
+		
+		printStudent(students);
+		
+	}
 
-5       6      7        8      9       10	11	
+	static void printStudent(Student[] objs) {
+		System.out.print("==========    학생별   /  과목별 총점구하기  ==========\n\t");
+		System.out.print("국어\t영어\t수학\t총점\t평균\n");
+		for (Student obj : objs) {
+			System.out.println(obj.toString());
+		}
+		for(int j=0;j<45;j++){
+			System.out.print("=");
+		}
+		System.out.print("\n총점\t");
+		System.out.println(Student.korTotal+"\t"
+		                  +Student.engTotal+"\t"
+				          +Student.mathTotal);		
+	}
+	
+	
+main() 실행 후 다음과 같이 출력될 수 있도록 Student의 toString()을 작성하세요.
+	
+==========    학생별   /  과목별 총점구하기  ==========
+	국어	영어	수학	총점	평균
+강호동	85	60	70	215	71.7
+이승기	90	95	80	265	88.3
+유재석	75	80	100	255	85.0
+하하	80	70	95	245	81.7
+이광수	100	65	80	245	81.7
+=============================================
+총점	430	370	425
 
-12	13	14	15	16	17	18	
-
-19	20	21	22	23	24	25	
-
-26	27	28	29	30
 
 
-2. 1~45까지 중복 없는 수 6개 발생하는 프로그램
 
- Math.random() 이용해 보세요.
+
+
+public class Student {
+	String name;
+	int kor;
+	int math;
+	int eng;
+	static int korTotal;
+	static int mathTotal;
+	static int engTotal;
+
+	public Student(String name, int kor, int eng, int math) {
+		this.name = name;
+		this.kor = kor;		
+		this.eng = eng;
+		this.math = math;
+		korTotal+=kor;
+		engTotal+=eng;
+		mathTotal+=math;
+	}
+	int getTotal() {
+		return kor+eng+math;	
+	}
+	
+	float getAverage(){ 
+	   	 return (getTotal() / 3f);
+	}
+}	
