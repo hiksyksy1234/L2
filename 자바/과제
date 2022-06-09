@@ -2,7 +2,7 @@
 
 
 2. ArrayList를 이용한 프로그램으로 수정해 주세요.
-main()과 printStudent(), Student의 sort() 수정해 주세요
+main()과 printStudent(), Student2의 sort() 수정해 주세요
 
 	
 ===============   학생별   /  과목별 총점구하기  ===============
