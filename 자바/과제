@@ -1,43 +1,16 @@
-public static void main(String args[]) {
+ArrayList를 이용한 프로그램으로 수정해 주세요.
+main()과 printStudent(), Student의 sort() 수정해 주세요
 
-		Student[] students = { 
-				   new Student("강호동", 85, 60, 70),
-	               new Student("이승기", 90, 95, 80), 
-	               new Student("유재석", 75, 80, 100), 
-	               new Student("하하", 80, 70, 95), 
-	               new Student("이광수", 100, 65, 80) };
-		
-		printStudent(students);
-		
-	}
-
-	static void printStudent(Student[] objs) {
-		System.out.print("==========    학생별   /  과목별 총점구하기  ==========\n\t");
-		System.out.print("국어\t영어\t수학\t총점\t평균\n");
-		for (Student obj : objs) {
-			System.out.println(obj.toString());
-		}
-		for(int j=0;j<45;j++){
-			System.out.print("=");
-		}
-		System.out.print("\n총점\t");
-		System.out.println(Student.korTotal+"\t"
-		                  +Student.engTotal+"\t"
-				          +Student.mathTotal);		
-	}
 	
-	
-main() 실행 후 다음과 같이 출력될 수 있도록 Student의 toString()을 작성하세요.
-	
-==========    학생별   /  과목별 총점구하기  ==========
-	국어	영어	수학	총점	평균
-강호동	85	60	70	215	71.7
-이승기	90	95	80	265	88.3
-유재석	75	80	100	255	85.0
-하하	80	70	95	245	81.7
-이광수	100	65	80	245	81.7
-=============================================
-총점	430	370	425
+===============   학생별   /  과목별 총점구하기  ===============
+이름	국어	수학	영어	총점	평균	
+이승기	90	95	80	265	88.3	
+유재석	75	80	100	255	85.0	
+하하	80	70	95	245	81.7	
+이광수	100	65	80	245	81.7	
+강호동	85	60	70	215	71.7	
+=======================================================
+총점	430	370	425	
 
 
 
@@ -69,4 +42,18 @@ public class Student {
 	float getAverage(){ 
 	   	 return (getTotal() / 3f);
 	}
+	
+	static void sort(Student2[] students) {
+		Student2 imsi;
+		for (int i = 0; i < students.length - 1; i++) {
+			for (int j = i + 1; j < students.length; j++) {
+				if (students[i].getTotal() < students[j].getTotal()) {
+					imsi = students[i];
+					students[i] = students[j];
+					students[j] = imsi;
+				}
+			}
+		}
+
+	
 }	
