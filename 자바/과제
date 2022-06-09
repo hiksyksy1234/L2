@@ -46,6 +46,11 @@ public class Student2 {
 	   	 return (getTotal() / 3f);
 	}
 	
+	public String toString() {
+    	return name + "\t" + kor + "\t"+eng+ "\t"+ math+ "\t" + getTotal() + "\t" 
+ 		       + String.format("%.1f", getAverage());
+       }
+	
 	static void sort(Student2[] students) {
 		Student2 imsi;
 		for (int i = 0; i < students.length - 1; i++) {
