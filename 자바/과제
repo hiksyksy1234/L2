@@ -1,4 +1,7 @@
-ArrayList를 이용한 프로그램으로 수정해 주세요.
+1. 로또 번호6개를 중복 되지 않게 HashSet<Integer>를 이용해서 구하세요.
+
+
+2. ArrayList를 이용한 프로그램으로 수정해 주세요.
 main()과 printStudent(), Student의 sort() 수정해 주세요
 
 	
@@ -17,7 +20,7 @@ main()과 printStudent(), Student의 sort() 수정해 주세요
 
 
 
-public class Student {
+public class Student2 {
 	String name;
 	int kor;
 	int math;
@@ -26,7 +29,7 @@ public class Student {
 	static int mathTotal;
 	static int engTotal;
 
-	public Student(String name, int kor, int eng, int math) {
+	public Student2(String name, int kor, int eng, int math) {
 		this.name = name;
 		this.kor = kor;		
 		this.eng = eng;
