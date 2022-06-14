@@ -9,13 +9,13 @@
 
 2. 위의 파일을 읽어들여 Student2 객체를 생성하고 생성한 객체를 파일에 쓰기 작업을 합니다.(직렬화)
    public static void main(String args[]) {
-		input();
+		write();
 	}
 
 
 3. 직렬화 후 다시 역직렬화를 하시고 다음과 같이 출력되도록 합니다.
 public static void main(String args[]) {
-		write();
+		input();
 	}
   
 출력결과)  
