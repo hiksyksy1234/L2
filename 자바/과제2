@@ -1,28 +1,5 @@
-1. jumsu.txt내용을 다음과 같습니다.
-<<jumsu.txt>>
-이승기 100 70 80
-강호동 98 100 20
-윤하하 50 60 78
-유재석 80 70 80
-홍길동 80 80 80
+DAO클래스의 public ArrayList<Emp> selectAll()를
 
+public ArrayList<Map<String, Object>> selectAll() 로 변경하세요
 
-2. 위의 파일을 읽어들여 Student2 객체를 생성하고 생성한 객체를 파일에 쓰기 작업을 합니다.(직렬화)
-   public static void main(String args[]) {
-		write();
-	}
-
-
-3. 직렬화 후 다시 역직렬화를 하시고 다음과 같이 출력되도록 합니다.
-public static void main(String args[]) {
-		input();
-	}
-  
-출력결과)  
-이승기	100	70	80	250	83.3	
-강호동	98	100	20	218	72.7	
-윤하하	50	60	78	188	62.7	
-유재석	80	70	80	230	76.7	
-홍길동	80	80	80	240	80.0	
-끝
-
+Emp 클래스를 사용하지 않습니다.
