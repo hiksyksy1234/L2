@@ -1,0 +1,110 @@
+클래스이름 : CRUD
+
+일부분 소스)
+public class CRUD {
+	// CRUD:컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능
+	// C(Create-insert), R(Read-select)
+	// U(Update-update), D(Delete-delete)
+	static String menus[] = { "사원번호", "사원이름", "직급", "매니저", "입사일자", "급여", "커미션", "부서번호", "종료" };
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int menu = menuselect(sc);
+		String search_word = input(menu, sc);
+		search(menu, search_word);
+		sc.close();
+	}
+
+	private static void search(int menu, String search_word) {
+		DAO dao = new DAO();
+		ArrayList<Emp> e = dao.search(menu - 1, search_word);
+
+		if (e == null) {
+			System.out.println("검색 결과가 없습니다.");
+		} else {
+			System.out.printf("%s\t%s\t%s\t\t%s\t%s\t\t%s\t%s\t%s\t\n", menus[0], menus[1], menus[2], menus[3],
+					menus[4], menus[5], menus[6], menus[7]);
+			for (Emp s : e) {
+				System.out.println(s.toString());
+			}
+		}
+
+	}
+===============================================================
+조건)
+   1) 조회할 컬럼과 데이터를 입력해서 emp의 조회된 내용을 출력해 봅니다.
+   2) 처음에 9번을 선택하면 emp테이블의 모든 내용이 출력되고 종료됩니다.
+   3) 검색 결과가 없는 경우 "검색 결과가 없습니다." 출력됩니다.      
+
+<<< 출력결과 >>>
+***************************************************************************************************
+1.사원번호
+2.사원이름
+3.직급
+4.매니저
+5.입사일자
+6.급여
+7.커미션
+8.부서번호
+9.종료
+조회할 컬럼을 선택하세요>2
+조회할 사원이름를(을) 입력하세요>SCOTT
+
+select * from emp where ename='SCOTT'
+
+사원번호	사원이름	 직급	         매니저	 입사일자		급여	커미션	부서번호	
+7788     SCOTT   ANALYST         7566	1987-07-13	3000	0	20
+***************************************************************************************************
+1.사원번호
+2.사원이름
+3.직급
+4.매니저
+5.입사일자
+6.급여
+7.커미션
+8.부서번호
+9.종료
+조회할 컬럼을 선택하세요>10
+1~9사이의 숫자를 입력하세요>8
+조회할 부서번호를(을) 입력하세요>10
+
+select * from emp where deptno=10
+
+사원번호	사원이름	직급	       매니저     입사일자		급여	  커미션	부서번호	
+7782    CLARK   MANAGER    7839	     1981-06-09	2450	0	10	
+7839    KING    PRESIDENT    	0    1981-11-17	5000	0	10	
+7934    MILLER  CLERK      7782	     1982-01-23	1300	0	10	
+=======================================================================
+1.사원번호
+2.사원이름
+3.직급
+4.매니저
+5.입사일자
+6.급여
+7.커미션
+8.부서번호
+9.종료
+조회할 컬럼을 선택하세요>5
+조회할 입사일자를(을) 입력하세요>81-12-03
+
+select * from emp where hiredate='81-12-03'
+
+사원번호	사원이름	직급		매니저	입사일자		급여	커미션	부서번호	
+7900    JAMES   CLERK           7698	1981-12-03      950	0	30	
+7902    FORD    ANALYST         7566	1981-12-03      3000	0	20	
+=========================================
+1.사원번호
+2.사원이름
+3.직급
+4.매니저
+5.입사일자
+6.급여
+7.커미션
+8.부서번호
+9.종료
+조회할 컬럼을 선택하세요>1
+조회할 사원번호를(을) 입력하세요>8000
+
+select * from emp where empno=8000
+
+검색 결과가 없습니다.
