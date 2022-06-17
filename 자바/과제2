@@ -1,5 +1,47 @@
-DAO클래스의 public ArrayList<Emp> selectAll()를
+1.
+String sel_where_sql = 
+            		"select code, name, price, maker " 
+                  + "from   goodsinfo "
+                  + "where  name= '" +  args[0] + "'";
 
-public ArrayList<Map<String, Object>> selectAll() 로 변경하세요
 
-Emp 클래스를 사용하지 않습니다.
+2.
+System.out.print("검색어를 입력하세요>");
+String sel_where_sql = 
+            		"select code, name, price, maker " 
+                  + "from   goodsinfo "
+                  + "where  name= '" +  search + "'";
+
+
+
+
+3.
+String sql = "insert into goodsinfo " 
+           + "values('A1000', '고급 핸드폰', 100, 'LG')";
+
+
+
+4. 
+
+ String sql =  "insert into goodsinfo "
+                        + "(code, name, price, maker) "
+                        + "values"
+                        + "('" + args[0] + "', "    //varchar2 자료형
+                        + "'"  + args[1] + "', " 
+                        +        args[2] + ", '" 
+                        +        args[3] + "')";
+
+
+
+5. 
+ String del_sql 
+             = "delete from goodsinfo "
+             + "where code = " + single + args[0] + single;     
+
+
+
+
+6.
+ String up_sql =" update goodsinfo "
+            		     + " set    maker=" + single +  args[1] + single
+      		             + " where  code =" + single +  args[0] + single; 
