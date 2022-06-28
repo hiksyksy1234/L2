@@ -54,6 +54,14 @@ span.psw {
   padding-top: 16px;
 }
 
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+body {
+  animation: animatezoom 0.6s
+}
 
 </style>
 </head>
