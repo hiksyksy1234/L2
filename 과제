@@ -27,5 +27,5 @@
        check_hyphen(zumin)이 거짓이면 "-을 넣어주세요" 출력
    (4) isNumber(zumin)의 값이 0~5사이이면    "주민번호 앞자리를 숫자로 입력하세요" 출력
    (5) isNumber(zumin)의 값이 7~13사이이면    "주민번호 뒷자리를 숫자로 입력하세요" 출력      
-   (6) check_length(zumin)는 true,check_hyphen(zumin) true, isNumber(zumin)이 -1 인 경우
+   (6) check_length(zumin)는 true,check_hyphen(zumin)는 true, isNumber(zumin)이 -1 인 경우
               남자 또는 여자 또는 외국인 출력
