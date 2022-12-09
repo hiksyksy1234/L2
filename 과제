@@ -1,31 +1,36 @@
-1. check_length 메서드
-  (1) 매개변수 : 주민번호(String)
-  (2) 매개변수의 길이가 14개이면 true,  아니면 false 리턴
-  
-2. pandan_gender 메서드
-  (1) 매개변수 : 주민번호(String)
-  (2) 주민번호 뒷자리 처음문자를 체크해서 해당 문자열을 리턴합니다.
-      1,3-남자
-      2,4-여자
-      그외 - 외국인 
-             
-3. check_hyphen 메서드
-   (1) 매개변수 : 주민번호(String)
-   (2) 주민번호 앞자리 후 7번째 문자열이 "-"인지 판단합니다.
-       "-"이면 true,  아니면 false 리턴
+DAO(Data Access Object) 클래스
+- 데이터 베이스와 연동하여 레코드의 추가, 수정, 삭제 작업이 이루어지는 클래스 입니다.
 
-4. isNumber 메서드
-   (1) 매개변수 : 주민번호(String)
-   (2) 주민번호를 차례대로 비교해서 숫자가 아닌 경우 해당 인덱스를 리턴합니다.
-              단, -은 숫자인지 비교하지 않습니다.
-              만약 앞자리와 뒷자리가 숫자이면 -1을 리턴합니다.
+1. 다음 main()를 실행시 아래와 같이 출력되도록 DAO, GoodsInfo 를 작성하세요
+public static void main(String[] args) {
+		DAO dao = new DAO();
+		List<GoodsInfo> list = dao.select();
+		
+		System.out.println("번호\t상품코드\t상품명\t\t가격\t제조사");
+		System.out.println("--------------------------------------------------------");
+        int no=1; 
+		for(GoodsInfo g : list) {
+			System.out.println(no++ + "\t" +  g.toString());
+		}
+	}
+	
+<출력결과>	
+번호	상품코드	상품명		가격	제조사
+--------------------------------------------------------
+1	10001	디지털  TV   	350000	LG
+2	10002	DVD 플레이어  	250000	LG
+3	10003	디지털 카메라  	210000	삼성
+4	10004	전자사전      	180000	아이리버
+5	10005	벽걸이 에어컨  	400000	삼성	
 
-5. main()
-   (1) check_length(zumin)이 참인 경우 check_hyphen(zumin) 호출
-   (2) check_length(zumin)이 거짓인 경우     "주민등록번호는 14자리 입니다. " 출력
-   (3) check_hyphen(zumin)이 참인 경우 isNumber(zumin) 호출
-       check_hyphen(zumin)이 거짓이면 "-을 넣어주세요" 출력
-   (4) isNumber(zumin)의 값이 0~5사이이면    "주민번호 앞자리를 숫자로 입력하세요" 출력
-   (5) isNumber(zumin)의 값이 7~13사이이면    "주민번호 뒷자리를 숫자로 입력하세요" 출력      
-   (6) check_length(zumin)는 true,check_hyphen(zumin)는 true, isNumber(zumin)이 -1 인 경우
-              남자 또는 여자 또는 외국인 출력
+* 클래스 GoodsInfo
+ public class GoodsInfo
+    private String code;
+	private String name;
+	private int price;
+	private String maker;
+
+	// 이곳에서 마우스 오른쪽 버튼 클릭 -> Source -> toString()
+	
+	// 이곳에서 마우스 오른쪽 버튼 클릭 -> Source -> Generate Getters and Setters
+	// -> Select All
