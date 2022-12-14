@@ -42,7 +42,7 @@ LOWSCORE HISCORE GRADE
  
  2. toString() 작성합니다. 
     - 모든 필드를 문자열로 연결해서 리턴합니다. 
-    - 필드값 사이에 "\t"를 넣어 주세요
+    - 필드 사이에 "\t"를 넣어 주세요
     
  3. 클래스의 일부분입니다.   
     public class Student3 {
