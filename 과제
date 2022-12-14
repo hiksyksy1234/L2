@@ -16,3 +16,20 @@ LOWSCORE HISCORE GRADE
         85      89.99      B+
         90      94.99      A0
         95      100        A+
+        
+ 2. 테이블 이름 : student
+ NO               NUMBER  -- 기본키
+ NAME           VARCHAR2(21) -- not null
+ KOR              NUMBER(3)  -- 0~100 사이의 값, not null
+ MATH           NUMBER(3)  -- 0~100 사이의 값,not null
+ ENG              NUMBER(3)  -- 0~100 사이의 값,not null
+ TOT              NUMBER(3)
+ AVG              NUMBER(5,2)
+ GRADE          VARCHAR2(3)
+
+3. 제약조건
+    student의 GRADE 컬럼은 hakjum테이블의 GRADE컬럼을 부모키로 사용합니다.
+    student의 GRADE 컬럼은 외래키입니다.
+
+4. 1부터 1씩 증가하는 시퀀스 만들기
+    시퀀스 이름:  student_seq
