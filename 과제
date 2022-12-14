@@ -72,3 +72,32 @@ LOWSCORE HISCORE GRADE
     }
     
     
+*** 다음 main()메서드와 출력결과를 참고로 DAO 클래스와 각각의 메서드를 완성하세요. ***
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);		
+		DAO dao = new DAO();	
+
+		do {
+			int menu = menuselect(sc);
+			switch (menu) {
+			case 1:
+				insert(sc, dao);
+				break;
+			case 2:
+				select(sc, dao);
+				break;
+			case 3:
+				update(sc, dao);
+				break;
+			case 4:
+				delete(sc, dao);
+				break;
+			case 5:
+				selectAll(dao);
+				break;
+			case 6:
+			     sc.close();
+				 return;
+			}
+		} while (true);
+	}
