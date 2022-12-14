@@ -1,36 +1,18 @@
-DAO(Data Access Object) 클래스
-- 데이터 베이스와 연동하여 레코드의 추가, 수정, 삭제 작업이 이루어지는 클래스 입니다.
+*** 테이블 및 시퀀스 작성 ***
+1. 테이블 이름 : hakjum
+ LOWSCORE     NUMBER(3)
+ HISCORE      NUMBER(5,2)
+ GRADE        VARCHAR2(3)  -- 기본키
 
-1. 다음 main()를 실행시 아래와 같이 출력되도록 DAO, GoodsInfo 를 작성하세요
-public static void main(String[] args) {
-		DAO dao = new DAO();
-		List<GoodsInfo> list = dao.select();
-		
-		System.out.println("번호\t상품코드\t상품명\t\t가격\t제조사");
-		System.out.println("--------------------------------------------------------");
-        int no=1; 
-		for(GoodsInfo g : list) {
-			System.out.println(no++ + "\t" +  g.toString());
-		}
-	}
-	
-<출력결과>	
-번호	상품코드	상품명		가격	제조사
---------------------------------------------------------
-1	10001	디지털  TV   	350000	LG
-2	10002	DVD 플레이어  	250000	LG
-3	10003	디지털 카메라  	210000	삼성
-4	10004	전자사전      	180000	아이리버
-5	10005	벽걸이 에어컨  	400000	삼성	
-
-* 클래스 GoodsInfo
- public class GoodsInfo
-    private String code;
-	private String name;
-	private int price;
-	private String maker;
-
-	// 이곳에서 마우스 오른쪽 버튼 클릭 -> Source -> toString()
-	
-	// 이곳에서 마우스 오른쪽 버튼 클릭 -> Source -> Generate Getters and Setters
-	// -> Select All
+sql>select * from hakjum
+LOWSCORE HISCORE GRADE
+---------- ---------- ------
+         0      59.99       F
+        60      64.99      D0
+        65      69.99      D+
+        70      74.99      C0
+        75      79.99      C+
+        80      84.99      B0
+        85      89.99      B+
+        90      94.99      A0
+        95      100        A+
