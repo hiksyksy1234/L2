@@ -33,3 +33,42 @@ LOWSCORE HISCORE GRADE
 
 4. 1부터 1씩 증가하는 시퀀스 만들기
     시퀀스 이름:  student_seq
+    
+    
+    
+    
+ *** Student3 클래스를 만들어 봅시다. ***
+ 1. 모든 컬럼을 setter와 getter메서드 작성합니다.
+ 
+ 2. toString() 작성합니다. 
+    - 모든 필드를 문자열로 연결해서 리턴합니다. 
+    - 필드값 사이에 "\t"를 넣어 주세요
+    
+ 3. 클래스의 일부분입니다.   
+    public class Student3 {
+		private int no;
+		private String name;
+		private int kor;
+		private int math;
+		private int eng;
+		private int tot;
+		private float avg;
+		private String grade;
+	
+	public Student3() {
+		
+	}
+	public Student3(String name, int kor, int math,int  eng) {
+		this.name =name;
+		this.kor =kor;
+		this.math = math;
+		this.eng = eng;
+		this.tot = kor + math + eng ;
+		this.avg = tot/3f;
+	}
+	   
+    public String toString() {
+      //완성해 주세요
+    }
+    
+    
