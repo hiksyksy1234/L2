@@ -1,0 +1,41 @@
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		do {
+			int menu = menuselect(sc);
+			System.out.println(menu);
+		} while (true);
+	}
+	
+아래와 같이 출력결과를 위한 menuselect()와 inputNumber()를 작성합니다.
+
+1. menuselect(Scanner sc)
+   inputNumber(sc, 1, menus.length)를 호출합니다.
+   
+2. inputNumber(Scanner sc, int start, int end) 
+   start ~ end 범위의 입력 받은 정수를 리턴합니다. 
+	
+============ 출력 결과 =====================
+1.글쓰기
+2.수정
+3.답변달기
+4.글삭제
+5.조회
+6.페이지 선정
+7.종료
+===========================================================
+메뉴를 선택하세요>a
+숫자로 입력하세요>8
+1~7사이의 숫자를 입력하세요>1
+1
+===========================================================
+1.글쓰기
+2.수정
+3.답변달기
+4.글삭제
+5.조회
+6.페이지 선정
+7.종료
+===========================================================
+메뉴를 선택하세요>	
+	
