@@ -1,0 +1,45 @@
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BoardDAO_seq dao = new BoardDAO_seq();
+
+		do {
+			int menu = menuselect(sc);
+			switch (menu) {
+			case 1:
+				insert(sc, dao);
+				break;
+			
+			case 5:
+				selectAll(dao);
+				break;
+			
+			case 7:
+				sc.close();
+				return;
+			}
+		} while (true);
+	}
+================ 메서드 ===============================
+1. selectAll()    
+  (1)  private static void selectAll(BoardDAO_seq dao)
+  (2)  dao.getBoardList(1, 10); 호출합니다. 
+       1페이지에 보여줄 10개의 목록을 가져오는 메서드를 호출합니다.  
+  (3)  dao.getBoardList(1, 10); 호출한 결과 null이 아니면 출력합니다.
+       null이면 "테이블에 데이터가 없습니다."라고 출력합니다.
+       
+2. DAO 클래스의  boardInsert()
+   (1)public List<Board> getBoardList(int page, int limit) 
+         
+         
+================  출력 결과 ================================
+1.글쓰기
+2.수정
+3.답변달기
+4.글삭제
+5.조회
+6.페이지 선정
+7.종료
+===========================================================
+메뉴를 선택하세요>5
+글번호	작성자		제목					내용						ref	lev	seq	date
+1		admin		자바              	데이터베이스와 연결      	1	0	0	2022-12-15
