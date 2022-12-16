@@ -1,0 +1,98 @@
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BoardDAO_seq dao = new BoardDAO_seq();
+
+		do {
+			int menu = menuselect(sc);
+			switch (menu) {
+			case 1:
+				insert(sc, dao);
+				break;
+			case 2:
+				update(sc, dao);
+				break;
+			case 3:
+				reply(sc, dao);
+				break;
+			case 4:
+				delete(sc, dao);
+				break;
+			case 5:
+				selectAll(dao);
+				break;
+			case 6:
+				selectPage(sc, dao);
+				break;
+			case 7:
+				sc.close();
+				return;
+			}
+		} while (true);
+	}
+
+=============================================
+1. selectPage()  
+   (1) private static void selectPage(Scanner sc, BoardDAO_seq dao)
+   (2) int listcount = dao.count();
+   (3) listcount가 0보다 크면     "한 페이지에 보여줄 목록을 입력하세요>"  
+       출력하고 limit를 구합니다.  
+       int limit = inputNumber(sc);
+       listcount가 0이면 "테이블에 데이터가 없습니다." 출력합니다.
+   (4) listcount와 limit를 이용해서 최대 페이지(maxpage)를 구합니다.
+   (5) "선택할 페이지를 입력하세요(1~최대페이지값)" 출력 후 page를 입력받습니다.
+   (6) List<Board> arrs = dao.getBoardList(page, limit);
+       출력 합니다.
+       
+2. DAO클래스의 count()
+   (1) public int count() 
+   (2) board 테이블의 총 row수를 반환합니다.       
+===========================================================
+1.글쓰기
+2.수정
+3.답변달기
+4.글삭제
+5.조회
+6.페이지 선정
+7.종료
+===========================================================
+메뉴를 선택하세요>5
+글번호	작성자			제목						내용					ref	lev	seq	date
+3		admin			좋아요2					정말 좋아요			3	0	0	2022-06-19
+4		jsp		 		 re:좋아요 답변			오늘도 힘차게~			3	1	1	2022-06-19
+2		admin			자바						데이터베이스와 연결		2	0	0	2022-06-19
+1		admin			JSP 공부는 재미있어요		열심히 해봐요			1	0	0	2022-06-19
+===========================================================
+1.글쓰기
+2.수정
+3.답변달기
+4.글삭제
+5.조회
+6.페이지 선정
+7.종료
+===========================================================
+메뉴를 선택하세요>6
+한 페이지에 보여줄 목록을 입력하세요>2
+선택할 페이지를 입력하세요(1~2)>
+2
+글의 총 갯수 : 4
+글번호	작성자			제목						내용					ref	lev	seq	date
+2		admin			자바						데이터베이스와 연결		2	0	0	2022-06-19
+1		admin			JSP 공부는 재미있어요		열심히 해봐요			1	0	0	2022-06-19
+===========================================================
+1.글쓰기
+2.수정
+3.답변달기
+4.글삭제
+5.조회
+6.페이지 선정
+7.종료
+===========================================================
+메뉴를 선택하세요>6
+한 페이지에 보여줄 목록을 입력하세요>3
+선택할 페이지를 입력하세요(1~2)>
+1
+글의 총 갯수 : 4
+글번호	작성자			제목					내용						ref	lev	seq	date
+3		admin			좋아요2				정말 좋아요				3	0	0	2022-06-19
+4		jsp		 	 	 re:좋아요 답변		오늘도 힘차게~				3	1	1	2022-06-19
+2		admin			자바					데이터베이스와 연결			2	0	0	2022-06-19     
