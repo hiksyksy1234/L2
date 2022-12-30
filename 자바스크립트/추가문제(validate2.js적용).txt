@@ -1,0 +1,23 @@
+
+1. 아이디 중복 검사시
+      아이디는 첫글자는 대문자이고 두번째부터는 대소문자, 숫자, _로 총 4개 이상이어야 합니다.
+      만약 조건에 만족하지 않으면       
+      alert("첫글자는 대문자이고 두번째부터는 대소문자, 숫자, _로 총 4개 이상이어야 합니다."); 
+     
+           
+2. 주민등록번호 앞자리,뒷자리 정규식으로 유효성 검사하고
+      검사에 만족하면 뒷자리 첫번째 숫자에 따라 성별이 자동 체크됩니다.   
+      뒷자리 1 또는 3이면 남자
+      뒷자리 2 또는 4이면 여자
+    <input type="radio" name="gender" value="m" id="gender1" readOnly>남자
+    <input type="radio" name="gender" value="f" id="gender2" readOnly>여자
+   =>readOnly를 추가해서 외부에서 체크할 수 없도록 합니다.
+   
+   
+3. 성별 체크 
+     라디오 버튼 선택한 객체를 가져옵니다.
+   document.querySelectorAll("input[type=radio]:checked");
+
+
+
+4. 3번을 참고해서 취미도 querySelectorAll()를 이용해서 갯수를 구해보세요.
