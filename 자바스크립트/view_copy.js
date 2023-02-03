@@ -114,7 +114,7 @@ $(function() {
 	//답글쓰기 클릭 후 계속 누르는 것을 방지하기 위한 작업
 	$('.comment-area').on('click','.comment-info-button',function(event){
 		
-	})//답글쓰기  후 취소 버튼을 클릭한 경우
+	})////답글쓰기 클릭 후 계속 누르는 것을 방지하기 위한 작업
 	
 	
 	
