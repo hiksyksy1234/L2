@@ -1,0 +1,16 @@
+3. SMTP 서버를 naver에서 지정하겠습니다.
+   1) http://www.naver.com 접속
+   2) 아이디와 비밀번호 입력 후 로그인
+   3) 메일 선택
+   4) 환경설정 클릭
+   5) POP3/IMAP설정 선택
+   6) POP3/SMTP 설정탭에서 
+      POP3/SMTP 사용 : 사용함 선택
+      원본 저장 : 네이버 메일을 원본 저장 선택
+   7) IMAP/SMTP 설정탭에서
+      IMAP/SMTP 사용 : 사용함 선택    
+      
+   8) 저장
+    
+    port번호는 587
+    SMTP 서버명 : smtp.naver.com
