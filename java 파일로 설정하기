@@ -1,0 +1,23 @@
+톰캣 서버 Stop합니다.
+
+1. pom.xml에 web.xml을 사용하지 않는다고 설정해야 합니다.
+   아래 부분 추가
+         <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+		</plugin>
+		
+2. web.xml 삭제합니다.		
+		
+3. WEB-INF/spring 폴더 삭제
+    root-context.xml과 servlet-context.xml 삭제		
+    
+4. src/main/java 폴더에 설정 관련 파일 생성 
+   (1) com.naver.myhome3.config 패키지 생성 	 
+   (2) WebConfig.java 생성
+   (3) RootConfig.java 생성
+   (4) ServletConfig.java 생성
