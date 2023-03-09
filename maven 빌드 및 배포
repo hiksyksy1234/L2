@@ -1,0 +1,41 @@
+1. 프로젝트 빌드하기 
+   
+   프로젝트에서 Run As 
+-> Maven build...
+
+-> Goals : package
+          
+   체크박스 중 Skip Tests 선택
+          
+-> Run 
+
+
+[INFO] BUILD SUCCESS
+
+2. target 폴더를 클릭
+    myhome4-1.0.0-BUILD-SNAPSHOT.war 생성 확인
+    
+        
+     <groupId>com.naver</groupId>
+	<artifactId>myhome4</artifactId>
+	<name>Spring4_MVC_BOARD</name>
+	<packaging>war</packaging>
+	<version>1.0.0-BUILD-SNAPSHOT</version>
+	
+	pom.xml에서 설정한 artifactId + "-" +  version + ".war" 이름으로 생성
+	
+	
+3. 배포하기
+   C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps 안에
+   	myhome4-1.0.0-BUILD-SNAPSHOT.war를 복사넣기 후 이름을 변경합니다.
+   	myhome4.war
+   	
+4. C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin
+   안에 Tomcat9w.exe를 클릭 후 Start 버튼을 눌러 서버를 가동합니다.
+   
+5. C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps
+   안에   myhome4 폴더가 생겼는지 확인합니다.
+   
+6.  브라우저에서 
+    http://localhost:8088/myhome4/member/login 으로 접속합니다. 
+  
