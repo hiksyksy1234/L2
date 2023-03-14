@@ -1,0 +1,22 @@
+putty Configuration
+
+     (1) Host Name : ifconfig로 확인하 아이피 주소 입력
+
+     (2) Saved Sessions : ubuntu-server
+
+     (3) Save
+
+     (4) Category -> Window -> Appearance -> 오른쪽 Font settings -> Change... -> 원하는 글꼴 선택
+
+     (5) Category -> Window -> Colours -> 오른쪽 Select a colour to adjust -> Default Foreground (글자색 변경) -> Modify -> 색상 선택
+                                                                            Default Background (배경색 변경) -> Modify -> 색상 선택
+
+     (6)  Category -> Session ->  Save
+
+     (7) Open
+
+     (8) Accept
+
+     (9) login as :  아이디 입력
+
+    (10) password : 비밀번호 입력
