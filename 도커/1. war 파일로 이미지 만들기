@@ -1,0 +1,23 @@
+[Dockerfile]
+
+FROM openjdk:17-ea-11-jdk-slim
+VOLUME /tmp
+COPY  Spring10_Security_War-0.0.1-SNAPSHOT.war  security.war
+ENTRYPOINT ["java","-jar","security.war"]
+
+
+
+================================================================
+
+1. 도커 파일을 이용해서 이미지 만들기
+(1) docker build -f Dockerfile -t security:1.0 .
+
+(2) docker build  -t 도커허브아이디/security:1.0 .
+
+
+1-1 docker hub 계정에 내 파일 목록 보기
+docker search 도커허브아이디
+
+
+1-2 이미지 docker hub에 올리기
+docker push  도커허브아이디/security:1.0 
